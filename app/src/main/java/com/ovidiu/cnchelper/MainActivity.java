@@ -37,40 +37,20 @@ public class MainActivity extends AppCompatActivity {
             double xfc= Double.parseDouble(xfinal.getText().toString());
             double zsc= Double.parseDouble(zstart.getText().toString());
             double zfc= Double.parseDouble(zfinal.getText().toString());
-            afisareUnghi.setText("Decimal Degrees: " + AngleCalculate(xsc,xfc,zsc,zfc) +"°" + "\n"
-                    + "Degrees Minutes Seconds: "+ DegreeCalculate(xsc,xfc,zsc,zfc) + "° "
-                    + MinutesCalculate(xsc,xfc,zsc,zfc) + "' " + SecondsCalculate(xsc,xfc,zsc,zfc) + "'' ");
+            afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
         }
+
     });
     }
 
-    public double AngleCalculate(double xs,double xf,double zs,double zf){
-        double param, result;
-        param = ((xf-xs)/2)/(zf-zs);
-        result = Math.atan(param) * 180 / 3.14159265;
-        return result;
-    }
-    public int DegreeCalculate(double xs,double xf,double zs,double zf){
-        double param, result;
-        param = ((xf-xs)/2)/(zf-zs);
-        result = Math.atan(param) * 180 / 3.14159265;
-        return (int) result;
-    }
-    public int MinutesCalculate(double xs,double xf,double zs,double zf){
-        double param, result;
-        param = ((xf-xs)/2)/(zf-zs);
-        result = Math.atan(param) * 180 / 3.14159265;
-        int degree = (int) result;
-        int minutes = (int) ( (result - (double)degree) * 60.0);
-        return (int) minutes;
-    }
-    public int SecondsCalculate(double xs,double xf,double zs,double zf){
+    public String Calculate(double xs,double xf,double zs,double zf){
         double param, result;
         param = ((xf-xs)/2)/(zf-zs);
         result = Math.atan(param) * 180 / 3.14159265;
         int degree = (int) result;
         int minutes = (int) ( (result - (double)degree) * 60.0);
         int seconds = (int) ( (result - (double)degree - (double)minutes / 60.0) * 60.0 * 60.0 );
-        return (int) seconds;
+        return "Decimal Degrees: " + result +"°" + "\n"
+                + "Degrees Minutes Seconds: "+ degree +"° " + minutes + "' " + seconds + "'' ";
     }
 }
