@@ -24,15 +24,15 @@
     <EditText
         android:id="@+id/x_start"
         android:textSize="20dp"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/plus_button"
+            android:id="@+id/plus_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+"/>
         <Button
-            android:id="@+id/minus_button"
+            android:id="@+id/minus_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"/>
@@ -49,15 +49,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="x final: "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        />
         <EditText
             android:id="@+id/x_final"
             android:textSize="20dp"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/plus_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"/>
+        <Button
+            android:id="@+id/minus_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -77,8 +84,18 @@
         <EditText
             android:id="@+id/z_start"
             android:textSize="20dp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/plus_button3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="+"/>
+        <Button
+            android:id="@+id/minus_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -98,8 +115,18 @@
         <EditText
             android:id="@+id/z_final"
             android:textSize="20dp"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/plus_button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"/>
+        <Button
+            android:id="@+id/minus_button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
