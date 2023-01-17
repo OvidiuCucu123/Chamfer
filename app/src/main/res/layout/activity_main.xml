@@ -7,33 +7,41 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="250sp"
+        android:layout_height="250sp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/schita_axe"
+        android:layout_gravity="center" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
     <TextView
         android:id="@+id/text_xstart"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="x start: "
+        android:text="X start: "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <EditText
         android:id="@+id/x_start"
-        android:textSize="20dp"
-        android:layout_width="60dp"
+        android:textSize="20sp"
+        android:layout_width="90sp"
         android:layout_height="wrap_content" />
         <Button
             android:id="@+id/plus_button1"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:text="+"/>
         <Button
             android:id="@+id/minus_button1"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:text="-"/>
 
@@ -42,27 +50,28 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
         <TextView
             android:id="@+id/text_xfinal"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="x final: "
+            android:text="X final: "
         />
         <EditText
             android:id="@+id/x_final"
-            android:textSize="20dp"
-            android:layout_width="60dp"
+            android:textSize="20sp"
+            android:layout_width="90sp"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/plus_button2"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:text="+"/>
         <Button
             android:id="@+id/minus_button2"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:text="-"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -70,30 +79,31 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
         <TextView
             android:id="@+id/text_zstart"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="z start: "
+            android:text="Z start: "
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <EditText
             android:id="@+id/z_start"
-            android:textSize="20dp"
-            android:layout_width="60dp"
+            android:textSize="20sp"
+            android:layout_width="90sp"
             android:layout_height="wrap_content"/>
         <Button
             android:id="@+id/plus_button3"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:text="+"/>
         <Button
             android:id="@+id/minus_button3"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:text="-"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -101,57 +111,33 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
         <TextView
             android:id="@+id/text_zfinal"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="z final: "
+            android:text="Z final: "
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <EditText
             android:id="@+id/z_final"
-            android:textSize="20dp"
-            android:layout_width="60dp"
+            android:textSize="20sp"
+            android:layout_width="90sp"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/plus_button4"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:text="+"/>
         <Button
             android:id="@+id/minus_button4"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:text="-"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Angle is: "
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/afisare_unghi_txt"
-            android:textSize="18dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -184,17 +170,100 @@
             android:textOff="0.001 OFF"
             android:textOn="0.001 ON"/>
 
-
     </androidx.appcompat.widget.LinearLayoutCompat>
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Catheters and Hypotenuse: "
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/afisare_cat_hyp_txt"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Angle α: "
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/afisare_unghi_alfa_txt"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Angle β: "
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/afisare_unghi_beta_txt"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <Button
             android:id="@+id/calculate_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="calculate"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="       "/>
+        <Button
+            android:id="@+id/reset_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESET"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

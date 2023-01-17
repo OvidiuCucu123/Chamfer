@@ -16,8 +16,11 @@ public class MainActivity extends AppCompatActivity {
     EditText xfinal;
     EditText zstart;
     EditText zfinal;
-    TextView afisareUnghi;
+    TextView afisareUnghiAlfa;
+    TextView afisareUnghiBeta;
+    TextView afisareCatHyp;
     Button calculateBtn;
+    Button resetBtn;
     Button plusBtn;
     Button plusBtn2;
     Button plusBtn3;
@@ -41,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
         xfinal = (EditText) findViewById(R.id.x_final);
         zstart = (EditText) findViewById(R.id.z_start);
         zfinal = (EditText) findViewById(R.id.z_final);
-        afisareUnghi = (TextView) findViewById(R.id.afisare_unghi_txt);
+        afisareUnghiAlfa = (TextView) findViewById(R.id.afisare_unghi_alfa_txt);
+        afisareUnghiBeta =(TextView) findViewById(R.id.afisare_unghi_beta_txt);
+        afisareCatHyp = (TextView) findViewById(R.id.afisare_cat_hyp_txt);
         calculateBtn = (Button) findViewById(R.id.calculate_btn);
+        resetBtn = (Button) findViewById(R.id.reset_btn);
         plusBtn = (Button) findViewById(R.id.plus_button1);
         plusBtn2 = (Button) findViewById(R.id.plus_button2);
         plusBtn3 = (Button) findViewById(R.id.plus_button3);
@@ -63,9 +69,25 @@ public class MainActivity extends AppCompatActivity {
             double xfc= Double.parseDouble(xfinal.getText().toString());
             double zsc= Double.parseDouble(zstart.getText().toString());
             double zfc= Double.parseDouble(zfinal.getText().toString());
-            afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+            afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+            afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+            afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
         }
     });
+
+    resetBtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            xstart.setText(ResetareCampuri());
+            xfinal.setText(ResetareCampuri());
+            zstart.setText(ResetareCampuri());
+            zfinal.setText(ResetareCampuri());
+            afisareCatHyp.setText(ResetareCampuri());
+            afisareUnghiAlfa.setText(ResetareCampuri());
+            afisareUnghiBeta.setText(ResetareCampuri());
+        }
+    });
+
     plusBtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -77,7 +99,9 @@ public class MainActivity extends AppCompatActivity {
                 double xfc= Double.parseDouble(xfinal.getText().toString());
                 double zsc= Double.parseDouble(zstart.getText().toString());
                 double zfc= Double.parseDouble(zfinal.getText().toString());
-                afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+                afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+                afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+                afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
             }
         }
     });
@@ -93,7 +117,9 @@ public class MainActivity extends AppCompatActivity {
                     double xfc= Double.parseDouble(xfinal.getText().toString());
                     double zsc= Double.parseDouble(zstart.getText().toString());
                     double zfc= Double.parseDouble(zfinal.getText().toString());
-                    afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+                    afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+                    afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+                    afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
                 }
             }
     });
@@ -109,7 +135,9 @@ public class MainActivity extends AppCompatActivity {
                     double xfc= Double.parseDouble(xfinal.getText().toString());
                     double zsc= Double.parseDouble(zstart.getText().toString());
                     double zfc= Double.parseDouble(zfinal.getText().toString());
-                    afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+                    afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+                    afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+                    afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
                 }
             }
     });
@@ -125,7 +153,9 @@ public class MainActivity extends AppCompatActivity {
                     double xfc= Double.parseDouble(xfinal.getText().toString());
                     double zsc= Double.parseDouble(zstart.getText().toString());
                     double zfc= Double.parseDouble(zfinal.getText().toString());
-                    afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+                    afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+                    afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+                    afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
                 }
             }
     });
@@ -141,7 +171,9 @@ public class MainActivity extends AppCompatActivity {
                 double xfc= Double.parseDouble(xfinal.getText().toString());
                 double zsc= Double.parseDouble(zstart.getText().toString());
                 double zfc= Double.parseDouble(zfinal.getText().toString());
-                afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+                afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+                afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+                afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
             }
         }
     });
@@ -157,7 +189,9 @@ public class MainActivity extends AppCompatActivity {
                     double xfc= Double.parseDouble(xfinal.getText().toString());
                     double zsc= Double.parseDouble(zstart.getText().toString());
                     double zfc= Double.parseDouble(zfinal.getText().toString());
-                    afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+                    afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+                    afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+                    afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
                 }
             }
     });
@@ -173,7 +207,9 @@ public class MainActivity extends AppCompatActivity {
                     double xfc= Double.parseDouble(xfinal.getText().toString());
                     double zsc= Double.parseDouble(zstart.getText().toString());
                     double zfc= Double.parseDouble(zfinal.getText().toString());
-                    afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+                    afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+                    afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+                    afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
                 }
             }
         });
@@ -189,20 +225,41 @@ public class MainActivity extends AppCompatActivity {
                     double xfc= Double.parseDouble(xfinal.getText().toString());
                     double zsc= Double.parseDouble(zstart.getText().toString());
                     double zfc= Double.parseDouble(zfinal.getText().toString());
-                    afisareUnghi.setText(Calculate(xsc,xfc,zsc,zfc));
+                    afisareCatHyp.setText(CalculateCatHyp(xsc,xfc,zsc,zfc));
+                    afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
+                    afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
                 }
             }
     });
     }
-
-    public String Calculate(double xs,double xf,double zs,double zf){
+    public String ResetareCampuri(){
+        return "";
+    }
+    public String CalculateCatHyp(double xs,double xf,double zs,double zf){
+        double a, b, c;
+        a = (xf-xs)/2;
+        b = zf-zs;
+        c = Math.sqrt(a*a+b*b);
+        return "a=" + String.format("%.3f", a) + "; " + "b=" + String.format("%.3f", b) + "; " + "c=" + String.format("%.3f", c) + ";";
+    }
+    public String CalculateAlfa(double xs,double xf,double zs,double zf){
         double param, result;
         param = ((xf-xs)/2)/(zf-zs);
         result = Math.atan(param) * 180 / 3.14159265;
         int degree = (int) result;
         int minutes = (int) ( (result - (double)degree) * 60.0);
         int seconds = (int) ( (result - (double)degree - (double)minutes / 60.0) * 60.0 * 60.0 );
-        return "Decimal Degrees: " + result +"°" + "\n"
+        return "Decimal Degrees: " + String.format("%.3f", result) +"°" + "\n"
+                + "Degrees Minutes Seconds: "+ degree +"° " + minutes + "' " + seconds + "'' ";
+    }
+    public String CalculateBeta(double xs,double xf,double zs,double zf){
+        double param, result;
+        param = (zf-zs)/((xf-xs)/2);
+        result = Math.atan(param) * 180 / 3.14159265;
+        int degree = (int) result;
+        int minutes = (int) ( (result - (double)degree) * 60.0);
+        int seconds = (int) ( (result - (double)degree - (double)minutes / 60.0) * 60.0 * 60.0 );
+        return "Decimal Degrees: " + String.format("%.3f", result) +"°" + "\n"
                 + "Degrees Minutes Seconds: "+ degree +"° " + minutes + "' " + seconds + "'' ";
     }
     public String Increment (double nr) {
@@ -210,19 +267,19 @@ public class MainActivity extends AppCompatActivity {
         boolean stareinc001 = incZZO.isChecked();
         boolean stareinc0001 = incZZZO.isChecked();
         if (stareinc01 == true && stareinc001 == true && stareinc0001 == true) {
-            return " " + (nr + 0.1 + 0.01 + 0.001);
+            return " " + String.format("%.3f",(nr + 0.1 + 0.01 + 0.001));
         } else if (stareinc01 == true && stareinc001 == true) {
-            return " " + (nr + 0.1 + 0.01);
+            return " " + String.format("%.3f",(nr + 0.1 + 0.01));
         } else if (stareinc01 == true && stareinc0001 == true) {
-            return " " + (nr + 0.1 + 0.001);
+            return " " + String.format("%.3f",(nr + 0.1 + 0.001));
         } else if (stareinc001 == true && stareinc0001 == true) {
-            return " " + (nr + 0.01 + 0.001);
+            return " " + String.format("%.3f",(nr + 0.01 + 0.001));
         } else if (stareinc01 == true) {
-            return " " + (nr + 0.1);
+            return " " + String.format("%.3f",(nr + 0.1));
         } else if (stareinc001 == true){
-            return " " + (nr + 0.01);
+            return " " + String.format("%.3f",(nr + 0.01));
         } else if (stareinc0001 == true){
-            return " " + (nr + 0.001);
+            return " " + String.format("%.3f",(nr + 0.001));
         }
           else return "error";
     }
@@ -231,19 +288,19 @@ public class MainActivity extends AppCompatActivity {
         boolean stareinc001 = incZZO.isChecked();
         boolean stareinc0001 = incZZZO.isChecked();
         if (stareinc01 == true && stareinc001 == true && stareinc0001 == true) {
-            return " " + (nr - 0.1 - 0.01 - 0.001);
+            return " " + String.format("%.3f",(nr - 0.1 - 0.01 - 0.001));
         } else if (stareinc01 == true && stareinc001 == true) {
-            return " " + (nr - 0.1 - 0.01);
+            return " " + String.format("%.3f",(nr - 0.1 - 0.01));
         } else if (stareinc01 == true && stareinc0001 == true) {
-            return " " + (nr - 0.1 - 0.001);
+            return " " + String.format("%.3f",(nr - 0.1 - 0.001));
         } else if (stareinc001 == true && stareinc0001 == true) {
-            return " " + (nr - 0.01 - 0.001);
+            return " " + String.format("%.3f",(nr - 0.01 - 0.001));
         } else if (stareinc01 == true) {
-            return " " + (nr - 0.1);
+            return " " + String.format("%.3f",(nr - 0.1));
         } else if (stareinc001 == true){
-            return " " + (nr - 0.01);
+            return " " + String.format("%.3f",(nr - 0.01));
         } else if (stareinc0001 == true){
-            return " " + (nr - 0.001);
+            return " " + String.format("%.3f",(nr - 0.001));
         }
         else return "error";
     }
