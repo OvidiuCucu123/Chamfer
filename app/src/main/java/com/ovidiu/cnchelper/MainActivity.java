@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -62,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         incZZO= (ToggleButton) findViewById(R.id.inczzo_btn);
         incZZZO = (ToggleButton) findViewById(R.id.inczzzo_btn);
 
+
+
     calculateBtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -91,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
     plusBtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            //afisareCatHyp.setText("15");
             boolean stareButon = toggleBtn.isChecked();
             double aa = Double.parseDouble(xstart.getText().toString());
             if (stareButon){
@@ -103,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 afisareUnghiAlfa.setText(CalculateAlfa(xsc,xfc,zsc,zfc));
                 afisareUnghiBeta.setText(CalculateBeta(xsc,xfc,zsc,zfc));
             }
+
         }
     });
 
@@ -235,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
     public String ResetareCampuri(){
         return "";
     }
+
     public String CalculateCatHyp(double xs,double xf,double zs,double zf){
         double a, b, c;
         a = (xf-xs)/2;
@@ -266,20 +272,27 @@ public class MainActivity extends AppCompatActivity {
         boolean stareinc01 = incZO.isChecked();
         boolean stareinc001 = incZZO.isChecked();
         boolean stareinc0001 = incZZZO.isChecked();
-        if (stareinc01 == true && stareinc001 == true && stareinc0001 == true) {
-            return " " + String.format("%.3f",(nr + 0.1 + 0.01 + 0.001));
-        } else if (stareinc01 == true && stareinc001 == true) {
-            return " " + String.format("%.3f",(nr + 0.1 + 0.01));
-        } else if (stareinc01 == true && stareinc0001 == true) {
-            return " " + String.format("%.3f",(nr + 0.1 + 0.001));
-        } else if (stareinc001 == true && stareinc0001 == true) {
-            return " " + String.format("%.3f",(nr + 0.01 + 0.001));
-        } else if (stareinc01 == true) {
-            return " " + String.format("%.3f",(nr + 0.1));
-        } else if (stareinc001 == true){
-            return " " + String.format("%.3f",(nr + 0.01));
-        } else if (stareinc0001 == true){
-            return " " + String.format("%.3f",(nr + 0.001));
+        if (stareinc01 && stareinc001 && stareinc0001) {
+            nr = nr + 0.1 + 0.01 + 0.001;
+            return " " + String.format("%.3f",(nr));
+        } else if (stareinc01 && stareinc001) {
+            nr = nr + 0.1 + 0.01;
+            return " " + String.format("%.3f",(nr));
+        } else if (stareinc01 && stareinc0001) {
+            nr = nr + 0.1 + 0.001;
+            return " " + String.format("%.3f",(nr));
+        } else if (stareinc001 && stareinc0001) {
+            nr = nr + 0.01 + 0.001;
+            return " " + String.format("%.3f",(nr));
+        } else if (stareinc01) {
+            nr = nr + 0.1;
+            return " " + String.format("%.3f",(nr));
+        } else if (stareinc001){
+            nr = nr +0.01;
+            return " " + String.format("%.3f",(nr));
+        } else if (stareinc0001){
+            nr = nr +0.001;
+            return " " + String.format("%.3f",(nr));
         }
           else return "error";
     }
@@ -287,19 +300,19 @@ public class MainActivity extends AppCompatActivity {
         boolean stareinc01 = incZO.isChecked();
         boolean stareinc001 = incZZO.isChecked();
         boolean stareinc0001 = incZZZO.isChecked();
-        if (stareinc01 == true && stareinc001 == true && stareinc0001 == true) {
+        if (stareinc01 && stareinc001 && stareinc0001) {
             return " " + String.format("%.3f",(nr - 0.1 - 0.01 - 0.001));
-        } else if (stareinc01 == true && stareinc001 == true) {
+        } else if (stareinc01 && stareinc001) {
             return " " + String.format("%.3f",(nr - 0.1 - 0.01));
-        } else if (stareinc01 == true && stareinc0001 == true) {
+        } else if (stareinc01 && stareinc0001) {
             return " " + String.format("%.3f",(nr - 0.1 - 0.001));
-        } else if (stareinc001 == true && stareinc0001 == true) {
+        } else if (stareinc001 && stareinc0001) {
             return " " + String.format("%.3f",(nr - 0.01 - 0.001));
-        } else if (stareinc01 == true) {
+        } else if (stareinc01) {
             return " " + String.format("%.3f",(nr - 0.1));
-        } else if (stareinc001 == true){
+        } else if (stareinc001 ){
             return " " + String.format("%.3f",(nr - 0.01));
-        } else if (stareinc0001 == true){
+        } else if (stareinc0001){
             return " " + String.format("%.3f",(nr - 0.001));
         }
         else return "error";
